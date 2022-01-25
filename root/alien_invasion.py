@@ -1,22 +1,19 @@
 import sys
 import pygame
 
+from settings import Settings
+ai_st = Settings()      # 要使用,应该先赋予其类 (类赋予)
 
 def run_game():
-    # 初始化游戏并创建屏幕对象
     pygame.init()
-    screen = pygame.display.set_mode((1200, 800))  # 实参(1200, 800) 是一个元组，因而需要两个括号
-    pygame.display.set_caption("Alien Invasion")
-    bg_color = (230, 230, 230)  # 设置背景色
-    
-    # 游戏主循环
+    pygame.display.set_caption("Alien_Invasion_by_Mohyio")
+    screen = pygame.display.set_mode((ai_st.screen_witdth,ai_st.screen_height))
+    bg_color = ai_st.bg_color
     while True:
-        # 监视 键鼠 事件
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-        screen.fill(bg_color)   # 每次循环时都重绘屏幕
-        pygame.display.flip()           # 最近绘制屏幕可见
-
+        screen.fill(bg_color)
+        pygame.display.flip()
 
 run_game()
