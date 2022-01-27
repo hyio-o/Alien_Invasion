@@ -1,4 +1,4 @@
-import sys
+# import sys
 import pygame
 
 from settings import Settings
@@ -15,13 +15,10 @@ def run_game():
     bg_color = ai_st.bg_color
     while True:
         gf.check_events()
-        gf.update_screen(screen.ai_settings, screen, ship)
-        """for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()"""
-        screen.fill(bg_color)
-        ship.blitme()
-        pygame.display.flip()
+        gf.update_screen(ai_st , screen=screen, ship=ship)
+        # screen.fill(bg_color)
+        # ship.blitme()
+        # pygame.display.flip()
 
 
 run_game()
